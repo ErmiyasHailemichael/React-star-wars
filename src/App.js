@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react";
+import StarWarDisplay from "./components/StarWarDisplay";
+import "./App.css";
 
 function App() {
+  const [starData, setStarData] = useState(null);
+
+  const makeApiCall = async () => {
+    const starUrl = "https://swapi.dev/api/starships/";
+    const res = await fetch(starUrl);
+    const json = await res.json();
+
+    setStarData(json);
+  };
+
+  useEffect(() => {
+    // console.log(1)
+    makeApiCall();
+    // console.log(2)
+  }, []);
+
+  const star = starData?.results.map((ele, index) => {
+    console.log(ele);
+    return <StarWarDisplay {...ele} key={index} />;
+  });
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="header">
+        <h1>STAR WARS STARSHIPS</h1>
+      </div>
+      <div>{star}</div>
     </div>
   );
 }
