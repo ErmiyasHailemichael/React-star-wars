@@ -7,6 +7,7 @@
   background-color: black;
 }
 .list {
+  color:white;
   text-align: center;
   display: inline-flex;
   flex-wrap: wrap;
@@ -14,8 +15,9 @@
   justify-content: space-between;
   width: 185px;
   height: 85px;
-  border: 3px solid black;
+  border: 3px solid white;
+  border-radius: 27px;
   padding: 50px;
   margin: 15px;
-  background-color: #3D5656;
+  background-color: #1e81b0;
 }
