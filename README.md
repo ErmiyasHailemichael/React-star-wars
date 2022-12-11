@@ -1,3 +1,5 @@
 # React Star Wars 
 
-## Put the live site link here
+## Live side link 
+
+https://starwarapis.netlify.app/
