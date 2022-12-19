@@ -29,7 +29,7 @@ function App() {
       <div className="header">
         <h1>STAR WARS STARSHIPS</h1>
       </div>
-      <div>{star}</div>
+      <div className="container">{star}</div>
     </div>
   );
 }
