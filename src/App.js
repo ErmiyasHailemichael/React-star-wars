@@ -23,15 +23,19 @@ function App() {
     console.log(ele);
     return <StarWarDisplay {...ele} key={index} />;
   });
-
-  return (
-    <div className="App">
-      <div className="header">
-        <h1>STAR WARS STARSHIPS</h1>
+  if(starData){
+    return (
+      <div className="App">
+        <div className="header">
+          <h1>STAR WARS STARSHIPS</h1>
+        </div>
+        <div className="container">{star}</div>
       </div>
-      <div className="container">{star}</div>
-    </div>
-  );
+    );
+  } else {
+    return(<h1>Loading...</h1>)
+  }
+
 }
 
 export default App;
